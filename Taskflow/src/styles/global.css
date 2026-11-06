@@ -1,0 +1,58 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f7f5;
+  color: #333333;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.dashboard__intro {
+  margin-bottom: 24px;
+}
+
+.dashboard__intro h2 {
+  font-size: 30px;
+  color: #5b3a29;
+  margin-bottom: 8px;
+}
+
+.dashboard__intro p {
+  font-size: 15px;
+  color: #888888;
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 28px 16px;
+  }
+
+  .dashboard__intro h2 {
+    font-size: 25px;
+  }
+}

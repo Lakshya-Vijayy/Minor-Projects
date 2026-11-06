@@ -1,0 +1,48 @@
+.task-list-section {
+  margin-top: 32px;
+}
+
+.task-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.task-list__header h3 {
+  font-size: 20px;
+  color: #5b3a29;
+}
+
+.task-list__header span {
+  font-size: 13px;
+  color: #888888;
+  background: #f0e9e4;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.task-empty {
+  text-align: center;
+  padding: 45px 20px;
+  background: #ffffff;
+  border: 1px dashed #dddddd;
+  border-radius: 12px;
+}
+
+.task-empty h3 {
+  color: #5b3a29;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.task-empty p {
+  color: #999999;
+  font-size: 14px;
+}

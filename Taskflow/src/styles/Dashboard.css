@@ -1,0 +1,66 @@
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 9px 18px;
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #777777;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: #5b3a29;
+  color: #5b3a29;
+}
+
+.filter-btn.active {
+  background: #5b3a29;
+  color: #ffffff;
+  border-color: #5b3a29;
+}
+.task-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 22px;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-label {
+  color: #888888;
+  font-size: 13px;
+}
+
+.stat-card h2 {
+  color: #5b3a29;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .task-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

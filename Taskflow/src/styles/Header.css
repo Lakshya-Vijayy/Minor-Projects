@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  padding: 24px 0;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #ffffff;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #5b3a29;
+  letter-spacing: -1px;
+}
+
+.header__tagline {
+  font-size: 14px;
+  color: #777777;
+}

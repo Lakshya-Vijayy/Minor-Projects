@@ -1,42 +1,69 @@
 .task-form-section {
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid #eeeeee;
-  margin-top: 28px;
+  position: relative;
+  background: #4f4f51;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(242, 196, 206, 0.2);
+  margin-top: 30px;
+  overflow: hidden;
+  animation: slideUp 0.7s ease both;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-form-section:hover {
+  border-color: rgba(242, 196, 206, 0.55);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.task-form-section.editing {
+  border-color: #f2c4ce;
+  box-shadow: 0 0 16px rgba(242, 196, 206, 0.4),
+              0 0 32px rgba(245, 143, 124, 0.2);
 }
 
 .task-form-section h3 {
-  color: #5b3a29;
-  font-size: 20px;
-  margin-bottom: 20px;
+  color: #f2c4ce;
+  font-size: 22px;
+  margin-bottom: 22px;
+  letter-spacing: -0.4px;
 }
 
 .task-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .task-form input,
 .task-form textarea {
   width: 100%;
-  padding: 13px 15px;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid rgba(214, 214, 214, 0.18);
+  border-radius: 10px;
+  background: #2c2b30;
+  color: #d6d6d6;
   font-family: inherit;
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.task-form input::placeholder,
+.task-form textarea::placeholder {
+  color: #a7a5aa;
 }
 
 .task-form input:focus,
 .task-form textarea:focus {
-  border-color: #5b3a29;
+  border-color: #f58f7c;
+  background: #343238;
+  box-shadow: 0 0 0 3px rgba(245, 143, 124, 0.13);
+  transform: translateY(-2px);
 }
 
 .task-form textarea {
   resize: vertical;
+  min-height: 100px;
 }
 
 .task-form__bottom {
@@ -47,16 +74,74 @@
 }
 
 .task-form__bottom button {
-  background: #5b3a29;
-  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  background: #f58f7c;
+  color: #2c2b30;
   border: none;
-  padding: 12px 22px;
-  border-radius: 8px;
+  padding: 13px 25px;
+  border-radius: 9px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.2s;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .task-form__bottom button:hover {
-  background: #3f281d;
+  background: #f2c4ce;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(245, 143, 124, 0.22);
+}
+
+.task-form__bottom button:active {
+  transform: scale(0.96);
+}
+
+.task-form__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.task-form__buttons .cancel-btn {
+  background: #2c2b30;
+  color: #f2c4ce;
+  border: 1px solid #f2c4ce;
+  padding: 13px 22px;
+  border-radius: 9px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.task-form__buttons .cancel-btn:hover {
+  background: #f2c4ce;
+  color: #2c2b30;
+  transform: translateY(-3px);
+}
+
+.task-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(85%) sepia(18%) saturate(600%) hue-rotate(290deg);
+}
+
+@media (max-width: 600px) {
+  .task-form-section {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .task-form-section h3 {
+    font-size: 20px;
+  }
+
+  .task-form__bottom {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .task-form__bottom button {
+    width: 100%;
+  }
 }

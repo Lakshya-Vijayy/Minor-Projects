@@ -6,9 +6,12 @@ import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import FilterButtons from './components/FilterButtons';
 import TaskStats from './components/TaskStats';
+import Clock from './components/Clock';
 
 import './styles/global.css';
 import './styles/Dashboard.css';
+import './styles/responsive.css';
+
 
 function App() {
   // Load saved tasks from Local Storage
@@ -77,6 +80,11 @@ function App() {
     setEditingTask(null);
   };
 
+  // Cancel editing
+  const cancelEdit = () => {
+    setEditingTask(null);
+  };
+
   // Display tasks according to the selected filter
   const filteredTasks = tasks.filter((task) => {
     if (activeFilter === 'Completed') {
@@ -95,6 +103,7 @@ function App() {
       <Header />
 
       <main className="dashboard">
+        <Clock />
         <div className="dashboard__intro">
           <h2>My Tasks</h2>
           <p>Stay organized and get things done.</p>
@@ -106,6 +115,7 @@ function App() {
           onAddTask={addTask}
           editingTask={editingTask}
           onUpdateTask={updateTask}
+          onCancelEdit={cancelEdit}
         />
 
         <FilterButtons

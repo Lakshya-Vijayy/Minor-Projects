@@ -1,0 +1,106 @@
+.note-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 230px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 5px 18px rgba(26, 32, 57, 0.05);
+  transition: var(--transition);
+}
+
+.note-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--amber);
+  box-shadow: 0 12px 28px rgba(26, 32, 57, 0.1);
+}
+
+.note-item__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.note-item__category {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #f0eddf;
+  border: 1px solid #a39459;
+  color: #1a2039;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 9px rgba(176, 163, 110, 0.12);
+}
+
+.note-item__date {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.note-item__title {
+  color: var(--ink);
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+
+.note-item__content {
+  flex: 1;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: 100px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--amber) transparent;
+}
+
+.note-item__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.note-item__actions button {
+  padding: 8px 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.note-item__edit {
+  color: var(--ink);
+}
+
+.note-item__edit:hover {
+  background: var(--amber-light);
+  border-color: var(--amber);
+  color: var(--ink);
+}
+
+.note-item__delete {
+  color: var(--danger);
+}
+
+.note-item__delete:hover {
+  background: rgba(198, 92, 80, 0.1);
+  border-color: var(--danger);
+}
+
+@media (max-width: 480px) {
+  .note-item {
+    padding: 18px;
+  }
+}

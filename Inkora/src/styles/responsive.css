@@ -1,0 +1,96 @@
+@media (max-width: 1100px) {
+  .note-list__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .note-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  .header {
+    padding: 22px 5%;
+  }
+
+  .header__container {
+    gap: 15px;
+  }
+
+  .note-list__grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 18px 5%;
+  }
+
+  .header__brand h1 {
+    font-size: 27px;
+  }
+
+  .header__brand p {
+    font-size: 11px;
+  }
+
+  .header__badge {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .note-list__grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .note-form {
+    padding: 18px;
+  }
+
+  .note-item {
+    min-height: 210px;
+  }
+
+  .note-list__header h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header__container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header__badge {
+    align-self: flex-start;
+  }
+
+  .note-form__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .note-form__footer select {
+    max-width: 100%;
+  }
+
+  .note-form__buttons {
+    width: 100%;
+  }
+
+  .note-form__buttons button {
+    flex: 1;
+  }
+
+  .note-item__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .note-item__actions button {
+    flex: 1;
+  }
+}

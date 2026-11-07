@@ -1,0 +1,54 @@
+.app {
+  min-height: 100vh;
+  background: transparent;
+  position: relative;
+}
+
+.app__main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 6%;
+}
+
+.app__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.app__content {
+  display: grid;
+  grid-template-columns: 350px minmax(0, 1fr);
+  align-items: start;
+  gap: 35px;
+}
+
+@media (max-width: 1050px) {
+  .app__content {
+    grid-template-columns: 1fr;
+  }
+
+  .app__toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .app__main {
+    padding: 25px 5%;
+  }
+
+  .app__toolbar {
+    margin-bottom: 25px;
+    gap: 15px;
+  }
+
+  .app__content {
+    gap: 28px;
+  }
+}

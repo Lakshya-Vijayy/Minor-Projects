@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --background: #f6f6f7;
+  --surface: #ffffff;
+  --surface-hover: #eeedf0;
+  --ink: #1a2039;
+  --muted: #747787;
+  --amber: #b0a36e;
+  --amber-light: #f0eddf;
+  --border: #d9d8da;
+  --danger: #c65c50;
+  --radius: 16px;
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(176, 163, 110, 0.17) 0 75px, transparent 77px),
+    radial-gradient(circle at 13% 18%, transparent 0 105px, rgba(176, 163, 110, 0.24) 106px 107px, transparent 109px),
+    radial-gradient(circle at 91% 15%, rgba(26, 32, 57, 0.055) 0 48px, transparent 50px),
+    radial-gradient(circle at 86% 22%, transparent 0 85px, rgba(176, 163, 110, 0.2) 86px 87px, transparent 89px),
+    radial-gradient(circle at 5% 78%, rgba(176, 163, 110, 0.11) 0 42px, transparent 44px),
+    radial-gradient(circle at 12% 85%, transparent 0 95px, rgba(26, 32, 57, 0.09) 96px 97px, transparent 99px),
+    radial-gradient(circle at 94% 78%, rgba(176, 163, 110, 0.15) 0 90px, transparent 92px),
+    radial-gradient(circle at 89% 88%, transparent 0 125px, rgba(176, 163, 110, 0.2) 126px 127px, transparent 129px),
+    radial-gradient(circle at 48% 48%, rgba(217, 216, 218, 0.16) 0 3px, transparent 4px);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  isolation: isolate;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  width: 220px;
+  height: 220px;
+  top: 34%;
+  left: -100px;
+  border: 1px solid rgba(176, 163, 110, 0.32);
+  border-radius: 42% 58% 63% 37% / 43% 38% 62% 57%;
+  box-shadow:
+    0 0 0 14px rgba(176, 163, 110, 0.035),
+    0 0 0 30px rgba(26, 32, 57, 0.025);
+  animation: shapeFloat 16s ease-in-out infinite alternate;
+}
+
+body::after {
+  width: 150px;
+  height: 150px;
+  right: 8%;
+  bottom: 8%;
+  border: 1px solid rgba(26, 32, 57, 0.13);
+  transform: rotate(45deg);
+  box-shadow:
+    0 0 0 12px rgba(176, 163, 110, 0.035),
+    0 0 0 25px rgba(176, 163, 110, 0.025);
+  animation: diamondFloat 18s ease-in-out infinite alternate;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.app::before,
+.app::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app::before {
+  width: 90px;
+  height: 90px;
+  top: 57%;
+  right: 12%;
+  border-radius: 50%;
+  background: rgba(176, 163, 110, 0.09);
+  box-shadow:
+    0 0 0 15px rgba(176, 163, 110, 0.035),
+    0 0 0 30px rgba(26, 32, 57, 0.025);
+  animation: shapeFloat 12s ease-in-out infinite alternate;
+}
+
+.app::after {
+  width: 55px;
+  height: 55px;
+  top: 12%;
+  left: 43%;
+  border: 1px solid rgba(176, 163, 110, 0.3);
+  transform: rotate(45deg);
+  animation: diamondFloat 14s ease-in-out infinite alternate;
+}
+
+@keyframes shapeFloat {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  to {
+    transform: translate(25px, -25px) rotate(15deg);
+  }
+}
+
+@keyframes diamondFloat {
+  from {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  to {
+    transform: translateY(-22px) rotate(90deg);
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--amber-light);
+  color: var(--ink);
+}
+
+.app__main {
+  animation: pageEnter 0.8s ease both;
+}
+
+.header {
+  animation: headerEnter 0.7s ease both;
+}
+
+.header__brand h1 {
+  animation: brandEnter 0.8s ease both;
+}
+
+.header__badge {
+  animation: badgeEnter 0.9s ease both;
+}
+
+.toolbar {
+  animation: toolbarEnter 0.8s ease both;
+}
+
+.note-form {
+  animation: formEnter 0.8s ease both;
+}
+
+.search-bar {
+  animation: searchEnter 0.8s ease both;
+}
+
+.note-item {
+  animation: noteEnter 0.7s ease both;
+}
+
+.empty-state {
+  animation: pageEnter 0.8s ease both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brandEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes badgeEnter {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toolbarEnter {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes formEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes searchEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes noteEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-size: auto;
+  }
+
+  body::before {
+    width: 120px;
+    height: 120px;
+  }
+
+  body::after {
+    width: 90px;
+    height: 90px;
+    right: 3%;
+  }
+
+  .app::before {
+    width: 55px;
+    height: 55px;
+  }
+
+  .app::after {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
